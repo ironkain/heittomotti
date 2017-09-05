@@ -1,0 +1,118 @@
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;  
+}
+
+.scroller {
+    height:300px; 
+    overflow:scroll;    
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #000000;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #000000;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+.full-width-div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+body {
+  background: #D8D8D8; 
+}
+.full {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.wide {
+  width: 100%;
+  height: auto;
+}
+@media (orientation: portrait) {
+  .full {
+    background-size: 200% auto;
+    background-position: top left;
+  }
+}
+
+div.transparent{
+    color: #000000;  /*text color */
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*color: blue;  text color */
+}
+
+.textarea{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+.jumbotron p {
+  margin-bottom: 0px;
+}
+
+/* navbar */
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.navbar-custom1 .nav > li > a:focus,
+.navbar-custom1 .nav > li.active > a {
+  background-color: #11bb11;
+}
+
+
+/*-- change navbar dropdown color --*/
+.navbar-custom1 .navbar-nav .open .dropdown-menu>li>a,.navbar-custom1 .navbar-nav .open .dropdown-menu {
+  background-color: #11bb11;
+  color:#ffffff;
+}
+        
+
+        
+

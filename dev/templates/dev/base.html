@@ -1,0 +1,205 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/dev.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/custom.js' %}" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+(function($) { // < start of closure
+    // within this block, $ = django.jQuery
+    $(document).ready(function() {
+    console.log( "ready!" );
+    });
+})(django.jQuery); // passes django.jQuery as parameter to closure block
+
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+// });
+</script>
+    </head>
+
+<!-- <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-1.2.6.min.js' %}"> -->
+
+    <body>
+    <div class="navbar navbar-fixed-top navbar-inverse navbar-custom1" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="#">Home</a>
+        </li>
+        <li><a href="#">Link</a>
+        </li>
+        <li class="dropdown "><a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">About <b class="caret"></b></a>
+            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                <li role="presentation"><a href="#" role="menuitem">Overview</a></li>
+                <li role="presentation"><a href="#" role="menuitem">Team Bios</a></li>
+                <li role="presentation"><a href="#" role="menuitem">Customers</a></li>
+                <li role="presentation"><a href="#" role="menuitem">Careers</a></li>
+            </ul>
+        </li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">More</a>
+        </li>
+        <li><a href="#">Options</a>
+        </li>
+    </ul>
+  </div>
+</div>
+
+    <!-- <header id="header" class="header clearfix no-padding">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Test</a>
+          </div>
+          <div class="collapse navbar-collapse no-padding">
+            <ul class="nav navbar-nav pull-right" id="navigator">
+              <li id="home"><a class="border" href="#">Home</a></li>
+              <li id="about"><a class="border" href="#">About</a></li>
+              <li id="cv"><a class="border" href="#">CV</a></li>
+              <li id="contact"><a class="border" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+
+ <div class="row">
+    <!-- <div class="full" style="background-image:url('{% static 'img/lappari.png' %}')"> -->
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Navikointi palkin testausta</h1>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        
+        <div class = "row">
+           <div class = "col-sm-6 col-md-3">
+              <a href = "#" class = "thumbnail">
+                 <!-- <img src = "{% static 'img/lappari.png' %}" alt = "Generic placeholder thumbnail"> -->
+                 <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail">
+              </a>
+           </div>
+           
+           <div class = "col-sm-6 col-md-3">
+              <a href = "#" class = "thumbnail">
+                 <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail">
+              </a>
+           </div>
+           
+           <div class = "col-sm-6 col-md-3">
+              <a href = "#" class = "thumbnail">
+                 <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail">
+              </a>
+           </div>
+           
+           <div class = "col-sm-6 col-md-3">
+              <a href = "#" class = "thumbnail">
+                 <img src = "/bootstrap/images/kittens.jpg" alt = "Generic placeholder thumbnail">
+              </a>
+           </div>
+           
+        </div>
+
+    <div class="transparent">
+    <p class="textarea">testtttttttttttttttttttttttt</p>
+</div>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+        <p>Some text p</p>
+      </div>
+
+    </div> <!-- /container -->
+</div>
+</div>
+
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    </body>
+</html>

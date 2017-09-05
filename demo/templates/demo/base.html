@@ -1,0 +1,63 @@
+{% load staticfiles %}
+ {{ form.media }}
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+        <script type="text/javascript">
+          (function($) { // < start of closure
+            // within this block, $ = django.jQuery
+            $(document).ready(function () {
+              console.log( "navbar itme color update" );
+              var url = window.location;
+              $('.navbar .nav').find('.active').removeClass('active');
+              $('.navbar .nav li a').each(function () {
+                if (this.href == url) {
+                    $(this).parent().addClass('active');
+                }
+              }); 
+            });
+          })(django.jQuery); // passes django.jQuery as parameter to closure block
+        </script>
+
+    </head>
+    <body>
+      <div class="navbar navbar-fixed-top navbar-custom1">
+      <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Heittomotti</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="tilaaminen">TILAAMINEN</a></li>
+        <li><a href="toimitusalueet">TOIMITUSALUEET</a></li>
+        <li><a href="tuoteinfo">TUOTEINFO</a></li>
+        <li><a href="palvelut">PALVELUT</a></li>
+        <li><a href="hinnasto">HINNASTO</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="videot">VIDEOT</a></li>
+        <li><a href="kuvat">KUVAT</a></li>
+        <li><a href="yhteystiedot">YHTEYSTIEDOT</a></li>
+      </ul>
+      </div>
+      </div>
+      {% block content %}
+      {% endblock %}
+
+      <div class="navbar navbar-default navbar-fixed-bottom navbar-custom1">
+        <div class="navbar-inner">
+          <div class="container center">
+            <ul class="nav navbar-nav-center navbar-midle">
+              <li class="nav-item"><a class="nav-link" href="http://www.heittomotti.fi">www.heittomotti.fi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </body>
+</html>

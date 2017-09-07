@@ -2,7 +2,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-	url(r'^$', views.demo_list, name='demo_list'),
+    url(r'^$', views.demo_list, name='demo_list'),
+    url(r'^www.heittomotti.fi$', views.demo_list, name='demo_list'),
     url(r'^tilaaminen$', views.tilaaminen, name='tilaaminen'),
     url(r'^kuvat$', views.kuvat, name='kuvat'),
     url(r'^videot$', views.videot, name='videot'),

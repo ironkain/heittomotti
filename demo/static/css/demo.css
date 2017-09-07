@@ -153,3 +153,10 @@ video{
 .navbar-inner {
        background-color: #D8D8D8;
  }
+
+.email-link {
+    text-decoration: underline;
+    a:hover, a:focus, a:active {
+        text-decoration: underline;
+    }
+}

@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^$', views.demo_list, name='demo_list'),
     url(r'^www.heittomotti.fi$', views.demo_list, name='demo_list'),
     url(r'^tilaaminen$', views.tilaaminen, name='tilaaminen'),
+    url(r'^tilaus$', views.tilaus, name='tilaus'),
     url(r'^kuvat$', views.kuvat, name='kuvat'),
     url(r'^videot$', views.videot, name='videot'),
     url(r'^tuoteinfo$', views.tuoteinfo, name='tuoteinfo'),

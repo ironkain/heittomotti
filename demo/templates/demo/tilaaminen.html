@@ -14,6 +14,41 @@
       <div class="transparent">
         <p align='center'><b><font color='red'>Nyt Syystarjous !<br>51,70 eur / heittomotti</font><font color='navy'> kotimaista koivuklapia !</font></b></p>
       </div>
+
+      <div class="transparent-tilaus">
+        <br>
+        <h4>Tilaan koivuklapeja seuraavasti :</h4>
+        <br>
+        <form method="POST" class="post-form">{% csrf_token %}
+          <!-- {{ form.as_p }} -->
+          {% for field in form %}
+              <div class="fieldWrapper">
+              {{ field.errors }}
+              {{ field.label_tag }} {{ field }}
+              </div>
+          {% endfor %}
+          <br>
+          <h4>Kotiin kuljetus hinnaston mukaisesti</h4>
+          <br>
+          <div class="transparent-tilaus-submit">
+              <button type="submit" class="save btn btn-default">Lähetä tilaus</button>
+          </div>
+        </form>
+     </div>
+     <br>
+     <br>
+      <div class="transparent">
+        <h2 align='center'><font color='navy'>Kuljetus alueet Uudellamaalla</font></h2>
+        <p align='center'>Helsinki Vantaa Tuusula Kerava Järvenpää Sipoo Porvoo Pornainen Espoo</p>
+      </div>
+      <div class="transparent">
+        <h2 align='center'><font color='navy'>Kuljetus tarjous nyt Uudellamaalla</font></h2>
+        <p align='center'>9,90eur tai 15,90eur / heittomotti riippuen etäisyydestä Sipoosta<br>Pyydä tarjous yli kolmen heittomotin kuljetuksista</p>
+      </div>
+      <div class="transparent">
+        <h2 align='center'><font color='navy'>Soita ja tilaa</font></h2>
+        <p align='center'>Puh 045 - 787 17 115<br>Arkisin klo 15:00 - 20:00<br>Viikonloppuisin klo 08:00 - 20:00</p>
+      </div>
       <div class="transparent">
         <h2 align='center'><font color='navy'>Tilaa sähköpostitse</font></h2>
 
@@ -22,18 +57,6 @@
         </div>
 
         <p align='center'>Tilauksessa tarvittavat tiedot:<br>Nimi<br>Osoite<br>Puhelinnumero<br>Koivukalapien määrä = X heittomottia</p>
-      </div>
-      <div class="transparent">
-        <h2 align='center'><font color='navy'>Soita ja tilaa</font></h2>
-        <p align='center'>Puh 045 - 787 17 115<br>Arkisin klo 15:00 - 20:00<br>Viikonloppuisin klo 08:00 - 20:00</p>
-      </div>
-      <div class="transparent">
-        <h2 align='center'><font color='navy'>Kuljetus alueet Uudellamaalla</font></h2>
-        <p align='center'>Helsinki Vantaa Tuusula Kerava Järvenpää Sipoo Porvoo Pornainen Espoo</p>
-      </div>
-      <div class="transparent">
-        <h2 align='center'><font color='navy'>Kuljetus tarjous nyt Uudellamaalla</font></h2>
-        <p align='center'>9,90eur tai 15,90eur / heittomotti riippuen etäisyydestä Sipoosta<br>Pyydä tarjous yli kolmen heittomotin kuljetuksista</p>
       </div>
       <br>
       <div class="video">

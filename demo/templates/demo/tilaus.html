@@ -2,26 +2,38 @@
 
 {% block content %}
 
-
  <div class="full" style="background-image:url('static/img/hm.jpg')">
- <div class="row">
-
-    <div class="container">
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div style="background:transparent !important;" class="jumbotron">
-      <br>
-      <div class="transparent">
-        <p align='center'><b><font color='red'>Nyt Syystarjous !<br>51,70 eur / heittomotti</font><font color='navy'> kotimaista koivuklapia !</font></b></p>
-      </div>
-      <div class="transparent">
-            <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">Save</button>
-            </form>
-       </div>
+     <div class="row">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div style="background:transparent !important;" class="jumbotron">
+                <br>
+                <div class="transparent">
+                    <p align='center'><b><font color='red'>Nyt Syystarjous !<br>51,70 eur / heittomotti</font><font color='navy'> kotimaista koivuklapia !</font></b></p>
+                </div>
+                <div class="transparent-tilaus">
+                    <br>
+                    <h4>Tilaan koivuklapeja seuraavasti :</h4>
+                    <br>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                    <!-- {{ form.as_p }} -->
+                    {% for field in form %}
+                        <div class="fieldWrapper">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                        </div>
+                    {% endfor %}
+                    <br>
+                    <h4>Kotiin kuljetus laskutetaan hinnaston mukaiseti</h4>
+                    <br>
+                    <div class="transparent-tilaus-submit">
+                        <button type="submit" class="save btn btn-default">Lähetä tilaus</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /container -->
     </div>
-</div> <!-- /container -->
 </div>
-</div>
+
 {% endblock content %}

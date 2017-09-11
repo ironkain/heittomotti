@@ -47,11 +47,10 @@ def tilaaminen(request):
 
                 import smtplib
                 from email.mime.multipart import MIMEMultipart
-                msg = MIMEMultipart()
+                msg = MIMEMultipart(post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja)
                 msg['From'] = 'myynti@heittomotti.fi'
                 msg['To'] = 'ismo.ronkainen@gmail.com'
                 msg['Subject'] = "Klapitilaus : " + post.nimi
-                msg.preamble = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja
                 msg.epilogue = ''
                 server = smtplib.SMTP('localhost')
                 server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())

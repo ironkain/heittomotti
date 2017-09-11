@@ -27,7 +27,7 @@ def tilaaminen(request):
             post.title = post.nimi + ' : ' + str(strftime("%Y-%m %d %H:%M:%S", gmtime()));
             post.save()
             #return redirect('post_detail', pk=post.pk)
-            return render(request, 'demo/home.html', {})
+            return render(request, 'demo/kiitos.html', {})
     else:
         form = PostForm()
     return render(request, 'demo/tilaaminen.html', {'form': form})

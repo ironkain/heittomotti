@@ -29,20 +29,32 @@ def tilaaminen(request):
             #return redirect('post_detail', pk=post.pk)
 
             try:
+                # import smtplib
+                # SERVER = "localhost"
+                # FROM = 'myynti@heittomotti.fi'
+                # TO = ["ismo.ronkainen@gmail.com"] # must be a list
+                # SUBJECT = "Klapitilaus : " + post.nimi
+                # TEXT = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja
+                # message = """\
+                # From: %s
+                # To: %s
+                # Subject: %s
+                # %s
+                # """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
+                # server = smtplib.SMTP(SERVER)
+                # server.sendmail(FROM, TO, message)
+                # server.quit()
+
                 import smtplib
-                SERVER = "localhost"
-                FROM = 'myynti@heittomotti.fi'
-                TO = ["ismo.ronkainen@gmail.com"] # must be a list
-                SUBJECT = "Hello!"
-                TEXT = "This message was sent with Python's smtplib."
-                message = """\
-                From: %s
-                To: %s
-                Subject: %s
-                %s
-                """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
-                server = smtplib.SMTP(SERVER)
-                server.sendmail(FROM, TO, message)
+                from email.mime.multipart import MIMEMultipart
+                msg = MIMEMultipart()
+                msg['From'] = 'myynti@heittomotti.fi'
+                msg['To'] = 'ismo.ronkainen@gmail.com'
+                msg['Subject'] = "Klapitilaus : " + post.nimi
+                msg.preamble = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja
+                msg.epilogue = ''
+                server = smtplib.SMTP('localhost')
+                server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())
                 server.quit()
             except:
                 pass

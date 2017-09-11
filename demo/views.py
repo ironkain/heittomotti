@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from time import gmtime, strftime
 
 #def post_list(request):
 #    return render(request, 'blog/post_list.html', {})
@@ -23,6 +24,7 @@ def tilaaminen(request):
             post = form.save(commit=False)
             # post.author = request.user
             post.published_date = timezone.now()
+            post.title = post.nimi + ' : ' + str(strftime("%Y-%m %d %H:%M:%S", gmtime()));
             post.save()
             #return redirect('post_detail', pk=post.pk)
             return render(request, 'demo/home.html', {})

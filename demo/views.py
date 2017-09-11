@@ -28,7 +28,7 @@ def tilaaminen(request):
             post.save()
             #return redirect('post_detail', pk=post.pk)
 
-            try:
+            # try:
                 # import smtplib
                 # SERVER = "localhost"
                 # FROM = 'myynti@heittomotti.fi'
@@ -45,18 +45,18 @@ def tilaaminen(request):
                 # server.sendmail(FROM, TO, message)
                 # server.quit()
 
-                import smtplib
-                from email.mime.multipart import MIMEMultipart
-                msg = MIMEMultipart(post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja)
-                msg['From'] = 'myynti@heittomotti.fi'
-                msg['To'] = 'ismo.ronkainen@gmail.com'
-                msg['Subject'] = "Klapitilaus : " + post.nimi
-                msg.epilogue = ''
-                server = smtplib.SMTP('localhost')
-                server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())
-                server.quit()
-            except:
-                pass
+            import smtplib
+            from email.mime.multipart import MIMEMultipart
+            msg = MIMEMultipart(post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja)
+            msg['From'] = 'myynti@heittomotti.fi'
+            msg['To'] = 'ismo.ronkainen@gmail.com'
+            msg['Subject'] = "Klapitilaus : " + post.nimi
+            msg.epilogue = ''
+            server = smtplib.SMTP('localhost')
+            server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())
+            server.quit()
+            # except:
+            #     pass
 
             return render(request, 'demo/kiitos.html', {})
     else:

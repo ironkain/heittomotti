@@ -28,6 +28,7 @@ KOIVUKLAPI_CHOICES = (
 class Tilaus(models.Model):   
     # author = models.ForeignKey('auth.User')
 
+    title = models.CharField(max_length=50)
     nimi = models.CharField(max_length=50)
     osoite = models.CharField(max_length=50)
     koivuklapeja = models.CharField(max_length=6, choices=KOIVUKLAPI_CHOICES, default='3')

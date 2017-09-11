@@ -27,6 +27,26 @@ def tilaaminen(request):
             post.title = post.nimi + ' : ' + str(strftime("%Y-%m %d %H:%M:%S", gmtime()));
             post.save()
             #return redirect('post_detail', pk=post.pk)
+
+            try:
+                import smtplib
+                SERVER = "localhost"
+                FROM = 'myynti@heittomotti.fi'
+                TO = ["ismo.ronkainen@gmail.com"] # must be a list
+                SUBJECT = "Hello!"
+                TEXT = "This message was sent with Python's smtplib."
+                message = """\
+                From: %s
+                To: %s
+                Subject: %s
+                %s
+                """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
+                server = smtplib.SMTP(SERVER)
+                server.sendmail(FROM, TO, message)
+                server.quit()
+            except:
+                pass
+
             return render(request, 'demo/kiitos.html', {})
     else:
         form = PostForm()

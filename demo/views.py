@@ -28,41 +28,24 @@ def tilaaminen(request):
             post.save()
             #return redirect('post_detail', pk=post.pk)
 
-            # try:
-                # import smtplib
-                # SERVER = "localhost"
-                # FROM = 'myynti@heittomotti.fi'
-                # TO = ["ismo.ronkainen@gmail.com"] # must be a list
-                # SUBJECT = "Klapitilaus : " + post.nimi
-                # TEXT = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja
-                # message = """\
-                # From: %s
-                # To: %s
-                # Subject: %s
-                # %s
-                # """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
-                # server = smtplib.SMTP(SERVER)
-                # server.sendmail(FROM, TO, message)
-                # server.quit()
-
-            import smtplib
-            from email.MIMEMultipart import MIMEMultipart
-            from email.MIMEText import MIMEText
-            from email.MIMEBase import MIMEBase
-            from email import encoders
-            from email.mime.multipart import MIMEMultipart
-            msg = MIMEMultipart()
-            msg['From'] = 'myynti@heittomotti.fi'
-            msg['To'] = 'ismo.ronkainen@gmail.com'
-            msg['Subject'] = "Klapitilaus : " + post.nimi
-            body = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja
-
-            msg.attach(MIMEText(body, 'plain'))
-            server = smtplib.SMTP('localhost')
-            server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())
-            server.quit()
-            # except:
-            #     pass
+            try:
+                import smtplib
+                from email.MIMEMultipart import MIMEMultipart
+                from email.MIMEText import MIMEText
+                from email.MIMEBase import MIMEBase
+                from email import encoders
+                from email.mime.multipart import MIMEMultipart
+                msg = MIMEMultipart()
+                msg['From'] = 'myynti@heittomotti.fi'
+                msg['To'] = 'ismo.ronkainen@gmail.com'
+                msg['Subject'] = "Klapitilaus : " + post.nimi
+                body = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja + " heittomottia"
+                msg.attach(MIMEText(body, 'plain'))
+                server = smtplib.SMTP('localhost')
+                server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())
+                server.quit()
+            except:
+                pass
 
             return render(request, 'demo/kiitos.html', {})
     else:

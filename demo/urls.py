@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^tuoteinfo$', views.tuoteinfo, name='tuoteinfo'),
     url(r'^toimitusalueet$', views.toimitusalueet, name='toimitusalueet'),
     url(r'^palvelut$', views.palvelut, name='palvelut'),
-    url(r'^yhteystiedot$', views.yhteystiedot, name='yhteystiedot'),
     url(r'^hinnasto$', views.hinnasto, name='hinnasto'),
+    url(r'^yhteystiedot$', views.yhteystiedot, name='yhteystiedot'),
+    url(r'^puh$', views.puh, name='puh'),
 ]

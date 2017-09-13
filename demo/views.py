@@ -39,7 +39,7 @@ def tilaaminen(request):
                 msg['From'] = 'myynti@heittomotti.fi'
                 msg['To'] = 'ismo.ronkainen@gmail.com'
                 msg['Subject'] = "Klapitilaus : " + post.nimi
-                body = post.nimi + "\n" + post.osoite + "\n" + post.puhelin + "\n" + post.sposti + "\n" + post.koivuklapeja + " heittomottia"
+                body = "Uusi klapitilaus ! Katso tiedot admin panelista !"
                 msg.attach(MIMEText(body, 'plain'))
                 server = smtplib.SMTP('localhost')
                 server.sendmail('myynti@heittomotti.fi','ismo.ronkainen@gmail.com',msg.as_string())

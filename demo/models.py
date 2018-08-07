@@ -22,6 +22,9 @@ class Tilaus(models.Model):
 
     title = models.CharField(max_length=50)
     nimi = models.CharField(max_length=50)
+    kaupunki = models.CharField(max_length=50, default='')
+    katuosoite = models.CharField(max_length=50, default='')
+    lisatietoja = models.CharField(max_length=50, default='')
     osoite = models.CharField(max_length=50)
     koivuklapeja = models.CharField(max_length=6, choices=KOIVUKLAPI_CHOICES, default='3')
     # maara = models.CharField(max_length=50)

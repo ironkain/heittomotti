@@ -6,23 +6,15 @@ from django.db import models
 from django.utils import timezone
 
 KOIVUKLAPI_CHOICES = (
-    ('2','2 heittomottia = 103,40 eur'),
-    ('3','3 heittomottia = 155,10 eur'),
-    ('4','4 heittomottia = 206,80 eur'),
-    ('5','5 heittomottia = 258,50 eur'),
-    ('6','6 heittomottia = 310,20 eur'),
-    ('7','7 heittomottia = 361,90 eur'),
-    ('8','8 heittomottia = 413,60 eur'),
-    ('9','9 heittomottia = 465,30 eur'),
-    ('10','10 heittomottia = 517,00 eur'),
-    ('11','11 heittomottia = 568,70 eur'),
-    ('12','12 heittomottia = 620,40 eur'),
-    ('13','13 heittomottia = 672,10 eur'),
-    ('14','14 heittomottia = 723,80 eur'),
-    ('15','15 heittomottia = 775,50 eur'),
-    ('16','16 heittomottia = 827,20 eur'),
-    ('17','17 heittomottia = 878,90 eur'),
-    ('18','18 heittomottia = 930,60 eur'),
+    ('2','2 heittomottia = 114,50 eur'),
+    ('3','3 heittomottia = 171,75 eur'),
+    ('4','4 heittomottia = 229,00 eur'),
+    ('5','5 heittomottia = 286,25 eur'),
+    ('6','6 heittomottia = 343,50 eur'),
+    ('7','7 heittomottia = 400,75 eur'),
+    ('8','8 heittomottia = 458,00 eur'),
+    ('9','9 heittomottia = 515,25 eur'),
+    ('10','10 heittomottia = 572,50 eur'),
 )
 
 class Tilaus(models.Model):   
